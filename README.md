@@ -62,7 +62,7 @@
 <body>
 
 <div id="loginBox">
-    <h2>💌 FERO'NUN SEVGİLİSİNİN İSMİ</h2>
+    <h2>💌 FERO'NUN SEGILISININ ISMI</h2>
     <input type="password" id="password" placeholder="Şifre">
     <br>
     <button onclick="checkPassword()">Giriş</button>
@@ -76,19 +76,19 @@
 
     <div class="photo-grid">
         <div class="photo-item">
-            <img src="bebek.jpg" alt="Bebek">
+            <IMG_20250805_075902.jpg="bebek.jpg" alt="Bebek">
             <div class="caption">Hayatımın en saf, en masum gülüşü… Bir gün elimizi hiç bırakmayacak ellerin küçüklüğünde koca bir dünya saklı.</div>
         </div>
         <div class="photo-item">
-            <img src="goz.jpg" alt="Göz">
+            <IMG_20250805_080010.jpg="goz.jpg" alt="Göz">
             <div class="caption">Bir bakışın var ki… konuşmadan anlıyor, dokunmadan hissettiriyor. Sanki tüm hikâyem gözlerinde yazılı.</div>
         </div>
         <div class="photo-item">
-            <img src="ayna.jpg" alt="Ayna">
+            <IMG_20250805_080208.jpg="ayna.jpg" alt="Ayna">
             <div class="caption">Sen kadraja bile sığmayan güzelliğinle, karanlık odaları bile aydınlatan bir ışıksın.</div>
         </div>
         <div class="photo-item">
-            <img src="motosiklet.jpg" alt="Motosiklet">
+            <d04293a2-78ce-4086-a3ce-793bec60bc89.jpg="motosiklet.jpg" alt="Motosiklet">
             <div class="caption">Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk.</div>
         </div>
     </div>
