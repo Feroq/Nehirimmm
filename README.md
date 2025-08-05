@@ -62,7 +62,7 @@
 <body>
 
 <div id="loginBox">
-    <h2>💌 Şifreyi Gir</h2>
+    <h2>💌 FERO'NUN SEVGİLİSİNİN İSMİ</h2>
     <input type="password" id="password" placeholder="Şifre">
     <br>
     <button onclick="checkPassword()">Giriş</button>
