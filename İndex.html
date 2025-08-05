@@ -6,11 +6,35 @@
     <title>💖 Nehir & Fero 💖</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ffcccc, #ffe6e6);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcccc, #ffe6e6);
         }
+
+        /* Kalp animasyonu */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            color: #ff4d79;
+            font-size: 20px;
+            animation: fall linear forwards;
+            opacity: 0.8;
+            z-index: 999;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         /* Giriş ekranı */
         #girisEkrani {
             display: flex;
@@ -20,12 +44,16 @@
             height: 100vh;
             text-align: center;
             background: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            position: relative;
         }
+
         #girisEkrani h2 {
             color: #ff4d79;
             font-size: 1.5em;
             margin-bottom: 20px;
         }
+
         #sifreInput {
             padding: 10px;
             border: 2px solid #ff4d79;
@@ -34,6 +62,7 @@
             outline: none;
             text-align: center;
         }
+
         #girisButon {
             margin-top: 15px;
             padding: 10px 20px;
@@ -44,15 +73,18 @@
             cursor: pointer;
             font-size: 1em;
         }
+
         #girisButon:hover {
             background: #ff1a57;
         }
+
         /* Ana içerik */
         #icerik {
             display: none;
             text-align: center;
             padding: 10px;
         }
+
         .container {
             background: white;
             margin: 0 auto;
@@ -61,30 +93,52 @@
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
+
         h1 {
             color: #ff4d79;
             font-size: 1.4em;
         }
+
         p {
             font-style: italic;
             color: #555;
             font-size: 0.9em;
         }
+
         img {
             width: 100%;
             max-width: 220px;
             border-radius: 10px;
             margin: 10px 0;
         }
+
         .date {
             font-weight: bold;
             font-size: 1em;
         }
+
         audio {
-            display: none; /* Gizli müzik */
+            display: none; /* Müzik gizli */
         }
     </style>
     <script>
+        // Kalp oluşturma fonksiyonu
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 300);
+
+        // Giriş kontrol
         function girisYap() {
             var sifre = document.getElementById("sifreInput").value.trim();
             if (sifre === "1.83") {
