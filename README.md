@@ -1,1 +1,125 @@
 # Nehirimmm
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sevgilim 💖</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #loginBox, #content {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+    #loginBox input {
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    #loginBox button {
+        padding: 10px 20px;
+        background: #ff4d6d;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    #loginBox button:hover {
+        background: #e63e5c;
+    }
+    #slideshow {
+        position: relative;
+        max-width: 400px;
+        margin: auto;
+    }
+    #slideshow img {
+        width: 100%;
+        border-radius: 10px;
+        display: none;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    #slideshow img.active {
+        display: block;
+    }
+    h1 {
+        color: #ff4d6d;
+    }
+    #caption {
+        margin-top: 15px;
+        font-style: italic;
+        color: #444;
+        min-height: 60px;
+    }
+</style>
+</head>
+<body>
+
+<div id="loginBox">
+    <h2>💌 Nehir</h2>
+    <input type="password" id="password" placeholder="Şifre">
+    <br>
+    <button onclick="checkPassword()">Giriş</button>
+</div>
+
+<div id="content" style="display:none;">
+    <!-- Müzik HTML içine gömülü -->
+    <audio id="bgMusic" src="data:audio/mp3;base64,PUT-YOUR-LONG-BASE64-CODE-HERE" loop></audio>
+    <h1>💖 Nehir & Fero 💖</h1>
+    <p>Sevgili olduk: <b>16.07.2025</b></p>
+    <div id="slideshow">
+        <img src="bebek.jpg" alt="Bebek" class="active">
+        <img src="goz.jpg" alt="Göz">
+        <img src="ayna.jpg" alt="Ayna">
+        <img src="motosiklet.jpg" alt="Motosiklet">
+    </div>
+    <p id="caption">Hayatımın en saf, en masum gülüşü… Bir gün elimizi hiç bırakmayacak ellerin küçüklüğünde koca bir dünya saklı.</p>
+</div>
+
+<script>
+let captions = [
+    "Hayatımın en saf, en masum gülüşü… Bir gün elimizi hiç bırakmayacak ellerin küçüklüğünde koca bir dünya saklı.",
+    "Bir bakışın var ki… konuşmadan anlıyor, dokunmadan hissettiriyor. Sanki tüm hikâyem gözlerinde yazılı.",
+    "Sen kadraja bile sığmayan güzelliğinle, karanlık odaları bile aydınlatan bir ışıksın.",
+    "Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk."
+];
+
+function checkPassword() {
+    let pass = document.getElementById('password').value.trim().toLowerCase();
+    if(pass === "nehir") {
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('bgMusic').play();
+        startSlideshow();
+    } else {
+        alert("Yanlış şifre 💔");
+    }
+}
+
+function startSlideshow() {
+    let slides = document.querySelectorAll('#slideshow img');
+    let caption = document.getElementById('caption');
+    let index = 0;
+    setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+        caption.textContent = captions[index];
+    }, 4000);
+}
+</script>
+
+</body>
+</html>
