@@ -46,13 +46,13 @@
     </style>
     <script>
         // Sayfa yüklenmeden şifre sor
-        window.onload = function() {
-            var sifre = prompt("💖 Bu sayfa özel, şifreyi giriniz:");
-            if (sifre !== "nehir") {
-                alert("❌ Yanlış şifre!");
+        document.addEventListener("DOMContentLoaded", function() {
+            var sifre = prompt("🔑 FERO'NUN BOYU nedir?");
+            if (sifre !== "1.83") {
+                alert("❌ Yanlış cevap!");
                 document.body.innerHTML = "<h2 style='color:red;text-align:center;'>Erişim reddedildi ❌</h2>";
             }
-        }
+        });
     </script>
 </head>
 <body>
