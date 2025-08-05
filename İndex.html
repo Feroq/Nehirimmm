@@ -14,43 +14,45 @@
         }
         .container {
             background: white;
-            margin: 10px auto;
-            padding: 15px;
-            max-width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            padding: 10px;
+            max-width: 100%;
+            border-radius: 0;
+            box-shadow: none;
         }
         h1 {
             color: #ff4d79;
             font-size: 1.4em;
+            margin-top: 10px;
         }
         p {
             font-style: italic;
             color: #555;
-            font-size: 0.9em;
+            font-size: 1em;
+            padding: 0 10px;
         }
         img {
             width: 100%;
-            max-width: 220px;
+            height: auto;
             border-radius: 10px;
-            margin: 10px 0;
+            margin: 5px 0;
         }
         .date {
             font-weight: bold;
             font-size: 1em;
         }
         audio {
-            margin-top: 10px;
-            width: 90%;
+            display: none; /* Müzik gizli */
         }
     </style>
     <script>
-        // Sayfa yüklenmeden şifre sor
         document.addEventListener("DOMContentLoaded", function() {
             var sifre = prompt("🔑 FERO'NUN BOYU nedir?");
             if (sifre !== "1.83") {
                 alert("❌ Yanlış cevap!");
                 document.body.innerHTML = "<h2 style='color:red;text-align:center;'>Erişim reddedildi ❌</h2>";
+            } else {
+                document.getElementById("music").play();
             }
         });
     </script>
@@ -72,9 +74,8 @@
         <img src="d04293a2-78ce-4086-a3ce-793bec60bc89.jpg" alt="Motosiklet">
         <p>Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk.</p>
 
-        <audio autoplay loop controls>
+        <audio id="music" autoplay loop>
             <source src="fall-in-love-264570.mp3" type="audio/mpeg">
-            Tarayıcınız müzik çalmayı desteklemiyor.
         </audio>
     </div>
 </body>
