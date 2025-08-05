@@ -43,7 +43,7 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             z-index: 10;
             position: relative;
         }
@@ -118,11 +118,11 @@
         }
 
         audio {
-            display: none; /* Müzik gizli */
+            display: none;
         }
     </style>
     <script>
-        // Kalp oluşturma fonksiyonu
+        // Kalpler
         function createHeart() {
             const heart = document.createElement("div");
             heart.classList.add("heart");
@@ -131,20 +131,22 @@
             heart.style.fontSize = Math.random() * 20 + 15 + "px";
             heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
             document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
+            setTimeout(() => heart.remove(), 6000);
         }
         setInterval(createHeart, 300);
 
-        // Giriş kontrol
+        // Giriş kontrolü + Müzik
         function girisYap() {
             var sifre = document.getElementById("sifreInput").value.trim();
             if (sifre === "1.83") {
                 document.getElementById("girisEkrani").style.display = "none";
                 document.getElementById("icerik").style.display = "block";
-                document.getElementById("bg-music").play();
+                
+                var music = document.getElementById("bg-music");
+                music.volume = 1.0; // Ses %100
+                music.play().catch(() => {
+                    console.log("Müzik otomatik başlatılamadı.");
+                });
             } else {
                 alert("❌ Yanlış cevap!");
             }
@@ -161,7 +163,7 @@
 
     <!-- Ana içerik -->
     <div id="icerik">
-        <audio id="bg-music" autoplay loop>
+        <audio id="bg-music" loop>
             <source src="fall-in-love-264570.mp3" type="audio/mpeg">
         </audio>
 
