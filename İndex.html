@@ -14,30 +14,46 @@
         }
         .container {
             background: white;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 500px;
+            margin: 10px auto;
+            padding: 15px;
+            max-width: 350px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         h1 {
             color: #ff4d79;
+            font-size: 1.4em;
         }
         p {
             font-style: italic;
             color: #555;
+            font-size: 0.9em;
         }
         img {
             width: 100%;
-            max-width: 300px;
+            max-width: 220px;
             border-radius: 10px;
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .date {
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1em;
+        }
+        audio {
+            margin-top: 10px;
+            width: 90%;
         }
     </style>
+    <script>
+        // Sayfa yüklenmeden şifre sor
+        window.onload = function() {
+            var sifre = prompt("💖 Bu sayfa özel, şifreyi giriniz:");
+            if (sifre !== "nehir") {
+                alert("❌ Yanlış şifre!");
+                document.body.innerHTML = "<h2 style='color:red;text-align:center;'>Erişim reddedildi ❌</h2>";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -55,6 +71,11 @@
 
         <img src="d04293a2-78ce-4086-a3ce-793bec60bc89.jpg" alt="Motosiklet">
         <p>Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk.</p>
+
+        <audio autoplay loop controls>
+            <source src="fall-in-love-264570.mp3" type="audio/mpeg">
+            Tarayıcınız müzik çalmayı desteklemiyor.
+        </audio>
     </div>
 </body>
 </html>
