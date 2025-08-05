@@ -1,111 +1,83 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sevgilim 💖</title>
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-        padding: 20px;
-    }
-    #loginBox, #content {
-        background: rgba(255, 255, 255, 0.85);
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        text-align: center;
-        max-width: 900px;
-        margin: auto;
-    }
-    #loginBox input {
-        padding: 10px;
-        border: none;
-        border-radius: 8px;
-        width: 80%;
-        margin-bottom: 10px;
-    }
-    #loginBox button {
-        padding: 10px 20px;
-        background: #ff4d6d;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-    }
-    #loginBox button:hover {
-        background: #e63e5c;
-    }
-    .photo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .photo-item img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    }
-    .caption {
-        margin-top: 10px;
-        font-style: italic;
-        color: #444;
-    }
-    h1 {
-        color: #ff4d6d;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Nehir & Fero 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffb6c1, #ffc0cb);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+        h1 {
+            color: #ff4d79;
+        }
+        .date {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .section p {
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="loginBox">
-    <h2>💌 FERO'NUN SEGILISININ ISMI</h2>
-    <input type="password" id="password" placeholder="Şifre">
-    <br>
-    <button onclick="checkPassword()">Giriş</button>
-</div>
+    <div class="container">
+        <h1>✨💖 Nehir & Fero 💖✨</h1>
+        <p class="date">Sevgili olduk: <b>16.07.2025</b></p>
 
-<div id="content" style="display:none;">
-    <audio id="bgMusic" src="data:audio/mp3;base64,PUT-YOUR-LONG-BASE64-MUSIC-CODE-HERE" loop></audio>
+        <div class="section">
+            <img src="bebek.jpg" alt="Bebek">
+            <p>Hayatımın en saf, en masum gülüşü… Bir gün elimizi hiç bırakmayacak ellerin küçüklüğünde koca bir dünya saklı.</p>
+        </div>
 
-    <h1>💖 Nehir & Fero 💖</h1>
-    <p>Sevgili olduk: <b>16.07.2025</b></p>
+        <div class="section">
+            <img src="goz.jpg" alt="Göz">
+            <p>Bir bakışın var ki… konuşmadan anlıyor, dokunmadan hissettiriyor. Sanki tüm hikâyem gözlerinde yazılı.</p>
+        </div>
 
-    <div class="photo-grid">
-        <div class="photo-item">
-            <IMG_20250805_075902.jpg="bebek.jpg" alt="Bebek">
-            <div class="caption">Hayatımın en saf, en masum gülüşü… Bir gün elimizi hiç bırakmayacak ellerin küçüklüğünde koca bir dünya saklı.</div>
+        <div class="section">
+            <img src="ayna.jpg" alt="Ayna">
+            <p>Sen kadraja bile sığmayan güzelliğinle, karanlık odaları bile aydınlatan bir ışıksın.</p>
         </div>
-        <div class="photo-item">
-            <IMG_20250805_080010.jpg="goz.jpg" alt="Göz">
-            <div class="caption">Bir bakışın var ki… konuşmadan anlıyor, dokunmadan hissettiriyor. Sanki tüm hikâyem gözlerinde yazılı.</div>
+
+        <div class="section">
+            <img src="motosiklet.jpg" alt="Motosiklet">
+            <p>Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk.</p>
         </div>
-        <div class="photo-item">
-            <IMG_20250805_080208.jpg="ayna.jpg" alt="Ayna">
-            <div class="caption">Sen kadraja bile sığmayan güzelliğinle, karanlık odaları bile aydınlatan bir ışıksın.</div>
-        </div>
-        <div class="photo-item">
-            <d04293a2-78ce-4086-a3ce-793bec60bc89.jpg="motosiklet.jpg" alt="Motosiklet">
-            <div class="caption">Yol uzun, gece serin… Ama sen yanımdayken ne üşürüm ne de yorulurum. İki teker, bir aşk hikâyesi ve sonsuza kadar sürecek bir yolculuk.</div>
-        </div>
+
+        <audio controls autoplay loop>
+            <source src="fall-in-love-264570.mp3" type="audio/mpeg">
+            Tarayıcınız ses dosyasını desteklemiyor.
+        </audio>
+
     </div>
-</div>
-
-<script>
-function checkPassword() {
-    let pass = document.getElementById('password').value.trim().toLowerCase();
-    if(pass === "nehir") {
-        document.getElementById('loginBox').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('bgMusic').play();
-    } else {
-        alert("Yanlış şifre 💔");
-    }
-}
-</script>
 
 </body>
 </html>
